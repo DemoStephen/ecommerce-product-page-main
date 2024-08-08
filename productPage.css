@@ -44,6 +44,19 @@ nav{
     width: 65%;
     background-color: white;
     min-height: 100vh;
+    overflow: hidden;
+    animation: sideBar .1s linear;
+    -moz-animation: sideBar .1s linear;
+    -webkit-animation: sideBar .1s linear;
+}
+
+@keyframes sideBar{
+    from{
+        width: 0px;
+    }
+    to{
+        width: 65%;
+    }
 }
 .mobileSidebar ul{
     margin: 2rem 0 0 0;
@@ -109,9 +122,13 @@ header .priceTag p span{
     padding: .85rem;
     border-radius: .5rem;
     justify-content: center;
+    gap: 1rem;
 }
 .discount{
     text-decoration: line-through;
+}
+.close, .menu{
+    cursor: pointer;
 }
 .attribution { font-size: 11px; text-align: center; margin: 0 0 2rem 0;}
 .attribution a { color: hsl(228, 45%, 44%); }
