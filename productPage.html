@@ -8,8 +8,8 @@
 </head>
 <body>
     <nav class="d-flex">
-        <div class="mobileSidebar">
-            <img src="./images/icon-close.svg" alt="icon close">
+        <div data-sideBar="sideBar" class="mobileSidebar d-none">
+            <img data-closeSideBar="closeSideBar" src="./images/icon-close.svg" alt="icon close" class="close">
             <ul>
                 <li>Collections</li>
                 <li>Men</li>
@@ -19,7 +19,7 @@
             </ul>
         </div>
         <div class="d-flex gap">
-            <img src="./images/icon-menu.svg" alt="icon menu" class="menu">
+            <img data-openSideBar="openSideBar" src="./images/icon-menu.svg" alt="icon menu" class="menu">
             <img src="./images/logo.svg" alt="logo">
             <ul class="d-flex gap desktopCta">
                 <li>Collections</li>
@@ -37,13 +37,13 @@
     <main class="d-flex">
         <section>
             <div class="banner width">
-                <img src="./images/image-product-1.jpg" alt="image product 1" class="width borderRadius">
+                <img data-banner="banner" src="./images/image-product-1.jpg" alt="image product 1" class="width borderRadius">
             </div>
             <div class="thumbnail">
-                <img src="./images/image-product-1-thumbnail.jpg" alt="image product 1 thumbnail" class="width borderRadius">
-                <img src="./images/image-product-2-thumbnail.jpg" alt="image product 2 thumbnail" class="width borderRadius">
-                <img src="./images/image-product-3-thumbnail.jpg" alt="image product 3 thumbnail" class="width borderRadius">
-                <img src="./images/image-product-4-thumbnail.jpg" alt="image product 4 thumbnail" class="width borderRadius">
+                <img data-imageThumbnail="imageThumbnail"  src="./images/image-product-1-thumbnail.jpg" alt="image product 1 thumbnail" class="width borderRadius">
+                <img data-imageThumbnail="imageThumbnail" src="./images/image-product-2-thumbnail.jpg" alt="image product 2 thumbnail" class="width borderRadius">
+                <img data-imageThumbnail="imageThumbnail" src="./images/image-product-3-thumbnail.jpg" alt="image product 3 thumbnail" class="width borderRadius">
+                <img data-imageThumbnail="imageThumbnail" src="./images/image-product-4-thumbnail.jpg" alt="image product 4 thumbnail" class="width borderRadius">
             </div>
         </section>
         <header>
@@ -52,16 +52,16 @@
             <p class="productAbout">These low-profile sneakers are your perfect casual wear companion. Featuring adurable rubber outer sole, they’ll withstand everything the weather can offer.</p>
             <div class="priceTag">
                 <p class="d-flex">
-                    <strong>$125.00</strong>
+                    <strong data-price="price">$125.00</strong>
                     <span>50%</span>
                 </p>
-                <p class="discount">$250.00</p>
+                <p data-discount="discount" class="discount">$250.00</p>
             </div>
             <div class="productQuantity d-flex">
                 <div class="toggleQuantity d-flex">
-                    <button><img src="./images/icon-minus.svg" alt="icon minus"></button>
-                    <span>0</span>
-                    <button><img src="./images/icon-plus.svg" alt="icon plus"></button>
+                    <button data-decrementBtn="decrementBtn"><img src="./images/icon-minus.svg" alt="icon minus"></button>
+                    <span data-quantity="quantity">0</span>
+                    <button data-incrementBtn="incrementBtn"><img src="./images/icon-plus.svg" alt="icon plus"></button>
                 </div>
                 <button class="d-flex purchase">
                     <img src="./images/icon-cart.svg" alt="icon cart">
@@ -73,6 +73,7 @@
     <div class="attribution">
         Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
         Coded by <a href="#">Adewale Stephen</a>.
-      </div>
+    </div>
+    <script src="./productPage.js"></script>
 </body>
 </html>
