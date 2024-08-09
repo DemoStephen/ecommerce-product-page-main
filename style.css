@@ -16,143 +16,187 @@
     --Grayishblue: hsl(220, 14%, 75%);
     --Lightgrayishblue: hsl(223, 64%, 98%);
     --White: hsl(0, 0%, 100%);
-    /* --Black (with 75% opacity for lightbox background): hsl(0, 0%, 0%) */
+    --Black : hsl(0, 0%, 0%);
+    --lightbox : hsla(0, 0%, 0%, 0.75);
 }
 body{
-    font-size: 16px;
-    width: min(1280px, calc(100% - 40px));
-    padding: 0 0 2rem 0;
+    background-color: var(--White);
+    width: clamp(64rem, calc(100% - 20px), 75rem);
     margin: auto;
-    background-color: var(--Lightgrayishblue);
-    color: var(--Darkgrayishblue);
+    font-size: 16px;
 }
 nav{
-    padding: 1rem 0;
     justify-content: space-between;
+    padding: .75rem 2rem;
+    background-color: var(--Lightgrayishblue);
+    position: relative;
+    border-radius: 5rem;
+    margin: 1rem 0 0 0;
 }
-.avater{
+.avatar{
     width: 50px;
 }
+.mobileSidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 1.5rem 1rem;
+    width: 65%;
+    background-color: white;
+    min-height: 100vh;
+    overflow: hidden;
+    animation: sideBar .1s linear;
+    -moz-animation: sideBar .1s linear;
+    -webkit-animation: sideBar .1s linear;
+}
+
+@keyframes sideBar{
+    from{
+        width: 0px;
+    }
+    to{
+        width: 65%;
+    }
+}
+.mobileSidebar ul{
+    margin: 2rem 0 0 0;
+}
+.mobileSidebar ul li{
+    padding: .5rem 0;
+}
 main{
-    margin-top: 2rem;
-    padding: 1rem 5rem;
-    gap: 5rem;
+    justify-content: space-between;
+    padding: .75rem 5%;
+    margin: 4rem 0;
+    gap: 8rem
 }
-section{
-    width: 100%;
+section, header{
+    width: 50%;
 }
-.productImages{
+.banner img{
+    margin-bottom: 1rem;
+}
+.thumbnail{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem
 }
-.bigImage,
-.productImages img{
-    width: 100%;
-    border-radius: 1rem;
-    border: 2px solid transparent;
-}
-.bigImage{
-    margin-bottom: 1rem;
-}
-.sneaker{
+header .companyName{
     text-transform: uppercase;
 }
-h1{
-    font-size: 3rem;
-    line-height: 3rem;
-    margin: 1rem 0 1.5rem 0;
-    color: var(--Verydarkblue);
+header h1{
+    font-size: 2.75rem;
+    line-height: 1;
+    margin: .75rem 0;
 }
-.sneakerInfo{
-    margin-bottom: 1rem;
-    line-height: 1.5rem;
+header .productAbout{
+    margin: 1rem 0;
+    line-height: 1.5;
 }
-.sneakerPrice{
-    gap: 1rem
+header .priceTag p strong{
+    font-size: 1.75rem;
 }
-.sneakerPrice strong{
-    font-size: 2rem;
-    color: var(--Verydarkblue);
-}
-.sneakerPrice span{
-    padding: .1rem .35rem;
-    background-color: var(--Verydarkblue);
+header .priceTag p span{
+    padding: .2rem .45rem;
+    background-color: red;
+    border-radius: 5px;
     color: var(--White);
-    border-radius: .3rem;
+    margin: 0 0 0 .75rem;
 }
-.cart{
-    margin: 1rem 0 0 0;
-    gap: .75rem;
-}
-.cart div{
-    width: 35%;
-    background-color: var(--Paleorange);
+.productQuantity{
+    margin: 2rem 0 0 0;
     justify-content: space-between;
-    border-radius: .65rem;
 }
-
-.mainBut{
-    width: 100%;
+.productQuantity .toggleQuantity{
+    background-color: var(--Lightgrayishblue);
+    width: 40%;
+    justify-content: space-between;
+    border-radius: .5rem;
+}
+.productQuantity .toggleQuantity button{
+    padding: 1rem;
+}
+.productQuantity .purchase{
+    width: 50%;
     background-color: var(--Orange);
-    justify-content: center;
-    gap: .5rem;
-    border-radius: .65rem;
-}
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
-.gap{
-    gap: 2rem;
-}
-button{
-    border: none;
-    background-color: unset;
-    cursor: pointer;
     padding: .85rem;
+    border-radius: .5rem;
+    justify-content: center;
+    gap: 1rem;
 }
+.discount{
+    text-decoration: line-through;
+}
+.close, .menu{
+    cursor: pointer;
+}
+.attribution { font-size: 11px; text-align: center; margin: 0 0 2rem 0;}
+.attribution a { color: hsl(228, 45%, 44%); }
 ul{
     list-style: none;
+}
+button{
+    outline: none;
+    cursor: pointer;
+    border: none;
+    background-color: unset;
+}
+.borderRadius{
+    border-radius: 1rem;
+}
+.width{
+    width: 100%;
+}
+.gap{
+    gap: 1.5rem
 }
 .d-flex{
     display: flex;
     align-items: center;
     align-content: center;
 }
-.d-none, .menu, .desktopCta{
+.d-none,.menu{
     display: none;
 }
 .d-block{
     display: block;
 }
-@media (max-width: 850px){
+@media (max-width : 900px){
     body{
-        width: 100%;
-        padding: 0 5%;
+        width: 100%
     }
-    .desktopNav,
-    .avatercart{
-        gap: 1rem;
+    .avatar{
+        width: 40px;
     }
-    h1{
-        font-size: 2.5rem;
+    .desktopCta{
+        display: none;
     }
     .menu{
         display: block;
     }
     main{
         flex-direction: column;
-        padding: 0;
-        gap: 1rem;
+        margin: 2rem 0;
+        gap: 3rem
     }
-    .totalPricing{
+    section, header{
+        width: 100%;
+    }
+    .priceTag{
         display: flex;
         align-items: center;
+        align-content: center;
         justify-content: space-between;
+        flex-direction: row;
     }
-    .cart{
+    .productQuantity{
         flex-direction: column;
     }
-    .cart div{
+    .productQuantity .toggleQuantity, .productQuantity .purchase{
         width: 100%;
+        margin-top: 1rem;
+    }
+    .borderRadius{
+        border-radius: .5rem;
     }
 }

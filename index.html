@@ -1,81 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <title>Frontend Mentor | E-commerce product page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Product Page</title>
+    <link rel="stylesheet" href="productPage.css">
 </head>
 <body>
-
-  <nav class="d-flex">
-    <div class="desktopNav d-flex gap">
-      <img src="./images/icon-menu.svg" alt="menu icon" class="menu">
-      <img src="./images/logo.svg" alt="sneakers logo">
-      <ul class="d-flex gap desktopCta">
-        <li>Collections</li>
-        <li>Men</li>
-        <li>Women</li>
-        <li>About</li>
-        <li>Contact</li>
-      </ul>
-    </div>
-    <div class="mobileSideBar d-none">
-      <img src="./images/icon-close.svg" alt="close icon">
-      <ul>
-        <li>Collections</li>
-        <li>Men</li>
-        <li>Women</li>
-        <li>About</li>
-        <li>Contact</li>
-      </ul>
-    </div>
-    <div class="avatercart d-flex gap">
-      <img src="./images/icon-cart.svg" alt="cart icon">
-      <img src="./images/image-avatar.png" alt="avater" class="avater">
-    </div>
-  </nav>
- 
-  <main class="d-flex">
-    <section>
-      <img src="./images/image-product-1.jpg" alt="Product Images" class="bigImage">
-      <div class="productImages">
-        <img data-imageThumbnail="imageThumbnail" src="./images/image-product-1-thumbnail.jpg" alt="Product Images">
-        <img data-imageThumbnail="imageThumbnail" src="./images/image-product-2-thumbnail.jpg" alt="Product Images">
-        <img data-imageThumbnail="imageThumbnail" src="./images/image-product-3-thumbnail.jpg" alt="Product Images">
-        <img data-imageThumbnail="imageThumbnail" src="./images/image-product-4-thumbnail.jpg" alt="Product Images">
-      </div>
-    </section>
-    <section>
-      <p class="sneaker">Sneaker Company</p>
-      <h1>Fall Limited Edition Sneakers</h1>
-      <p class="sneakerInfo">
-        These low-profile sneakers are your perfect casual wear companion. Featuring a
-        durable rubber outer sole, they’ll withstand everything the weather can offer.
-      </p>
-      <div class="totalPricing">
-        <p class="sneakerPrice d-flex">
-          <strong data-price="price">$125.00</strong>
-          <span>50%</span>
-        </p>
-        <span data-fixedPrice="fixedPrice">$250.00</span>
-      </div>
-      <div class="cart d-flex">
-        <div class="incre d-flex">
-          <button data-decreaseCount="decreaseCount"><img src="./images/icon-minus.svg" alt="minus icons"></button>
-          <span data-count="count">0</span>
-          <button data-increaseCount="increaseCount"><img src="./images/icon-plus.svg" alt="minus icons"></button>
+    <nav class="d-flex">
+        <div data-sideBar="sideBar" class="mobileSidebar d-none">
+            <img data-closeSideBar="closeSideBar" src="./images/icon-close.svg" alt="icon close" class="close">
+            <ul>
+                <li>Collections</li>
+                <li>Men</li>
+                <li>Women</li>
+                <li>About</li>
+                <li>Contact</li>
+            </ul>
         </div>
-        <button class="mainBut d-flex"><img src="./images/icon-cart.svg" alt="icon cart"><span>Add to cart</span></button>
-      </div>
-    </section>
-  </main>
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Adewale Stephen</a>.
-  </div>
-  <script src="main.js"></script>
+        <div class="d-flex gap">
+            <img data-openSideBar="openSideBar" src="./images/icon-menu.svg" alt="icon menu" class="menu">
+            <img src="./images/logo.svg" alt="logo">
+            <ul class="d-flex gap desktopCta">
+                <li>Collections</li>
+                <li>Men</li>
+                <li>Women</li>
+                <li>About</li>
+                <li>Contact</li>
+            </ul>
+        </div>
+        <div class="basketAvater d-flex gap">
+            <img src="./images/icon-cart.svg" alt="icon cart">
+            <img src="./images/image-avatar.png" alt="image avatar" class="avatar">
+        </div>
+    </nav>
+    <main class="d-flex">
+        <section>
+            <div data-banner="banner" class="banner width">
+                <img src="./images/image-product-1.jpg" alt="image product 1" class="width borderRadius">
+            </div>
+            <div class="thumbnail">
+                <img data-imageThumbnail="imageThumbnail" src="./images/image-product-1-thumbnail.jpg" alt="image product 1 thumbnail" class="width borderRadius">
+                <img data-imageThumbnail="imageThumbnail" src="./images/image-product-2-thumbnail.jpg" alt="image product 2 thumbnail" class="width borderRadius">
+                <img data-imageThumbnail="imageThumbnail" src="./images/image-product-3-thumbnail.jpg" alt="image product 3 thumbnail" class="width borderRadius">
+                <img data-imageThumbnail="imageThumbnail" src="./images/image-product-4-thumbnail.jpg" alt="image product 4 thumbnail" class="width borderRadius">
+            </div>
+        </section>
+        <header>
+            <p class="companyName">Sneaker Company</p>
+            <h1>Fall Limited Edition Sneakers</h1>
+            <p class="productAbout">These low-profile sneakers are your perfect casual wear companion. Featuring adurable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+            <div class="priceTag">
+                <p class="d-flex">
+                    <strong data-price="price">$125.00</strong>
+                    <span>50%</span>
+                </p>
+                <p data-discount="discount" class="discount">$250.00</p>
+            </div>
+            <div class="productQuantity d-flex">
+                <div class="toggleQuantity d-flex">
+                    <button data-decrementBtn="decrementBtn"><img src="./images/icon-minus.svg" alt="icon minus"></button>
+                    <span data-quantity="quantity">0</span>
+                    <button data-incrementBtn="incrementBtn"><img src="./images/icon-plus.svg" alt="icon plus"></button>
+                </div>
+                <button class="d-flex purchase">
+                    <img src="./images/icon-cart.svg" alt="icon cart">
+                    Add to cart
+                </button>
+            </div>
+        </header>
+    </main>
+    <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="#">Adewale Stephen</a>.
+    </div>
+    <script src="./productPage.js"></script>
 </body>
 </html>
