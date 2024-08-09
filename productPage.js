@@ -46,14 +46,23 @@ const priceCalculator = ()=>{
     }
 }
 
-const imageThumbnail = document.querySelectorAll('data-imageThumbnail');
-let imageGallery = [
-    {src: './images/image-product-1.jpg', alt: 'image product 1'},
-    {src: './images/image-product-2.jpg', alt: 'image product 2'},
-    {src: './images/image-product-3.jpg', alt: 'image product 3'},
-    {src: './images/image-product-4.jpg', alt: 'image product 4'}
+const imageThumbnail = document.querySelectorAll('[data-imageThumbnail]');
+const banner = document.querySelector('[data-banner]');
+const bannerGallery = [
+    {src:'./images/image-product-1.jpg'},
+    {src:'./images/image-product-2.jpg'},
+    {src:'./images/image-product-3.jpg'},
+    {src:'./images/image-product-4.jpg'}
 ]
+bannerGallery.forEach((gallery) => {
+    console.log(gallery)
+});
 
-for(let i = 0; i < imageThumbnail.length; i++){
-    console.log(imageThumbnail[i])
-}
+imageThumbnail.forEach((thumbnail) => {
+    
+    thumbnail.addEventListener('click', (event)=>{
+        event.preventDefault();
+
+        banner.innerHTML = `<img data-imageThumbnail="imageThumbnail" src="${bannerGallery[i].src}" alt="image product" class="width borderRadius">`;
+    })  
+})
