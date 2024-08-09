@@ -1,0 +1,97 @@
+Questionaire for new projects
+Question1
+is this website for a new or established business? 
+Options A: New Business.
+Option B: Established business. 
+if(Question1 === Option A){
+	Option A Question : Do you have a logo and a brand Identity?
+	Option A: Yes
+Option B: No
+Option C: Yes, but i discovered its not okay.
+if(Option A Question  === Option A){
+		Preceed to Question 2 
+}
+else if( Option A Question  ===  Option B || Option A Question  ===  Option C){
+	Question 3: Would you like us to build you a brand identity and a logo?
+	Option A: Yes
+	Option B: No
+	if(Option A){
+		Preceed to Question 2 
+	}else if(Option B){
+		For new businesses its important to have a logo and brand identity. It makes your business stand out among peers. If your business dont have a logo just yet. Its fine you can continue. We will build you want you want.  
+	}
+}
+}else if(Question 1  === Option B){
+	Preceed to Question 2 
+}
+
+
+Question 2 
+Describe your business in one sentence.
+
+
+Question 3
+What services do you offer? 
+NB: Discuss the expected user jouney once they first visit your website and also the last action you want them to make once they leave the page. 
+
+Question 4
+Who is your target audience?
+Age reference
+Occupation
+Hobbies
+
+Question 5
+What would you like your website to accomplish? What is your goal?
+Get more customers? 
+Get more leads? 
+Get more sales from repeat customers? 
+Get more email subscribers? 
+Brand awareness? 
+Grow your social media following?
+
+Question 6
+Please give general example of websites you like and why?
+NB: provide link to this/these website/websites if neccessary.
+
+Question 7
+What are the unique selling point of your business?
+
+Question 8
+Do  you have an existing websites? 
+Option A: Yes 
+Option B: No
+if(Question 8 === A){
+	What is wrong with your current website? 
+}else{
+	Proceed to Question 9
+}
+
+Question 9
+Do you need a hosting service?
+Option A: Yes
+Option B: No
+if(Question 9 === A){
+	We would need information about your hosting service when the project get started.
+}else{
+	Proceed to Question 10
+}
+
+Question 10
+Do you need to be able to easily make edits and changes to your website on your own? NB: This includes additional charges. Its a new offer.
+Option A: Yes
+Option B: No
+
+Question 11
+When would you like your website Ready?
+
+Question 12
+Who would take over the website after been built.
+NB: Would you hire someone to manage the website for you or you would manage it yourself. Take note, maintaining website is a crucial role that requires alot of attention. If you already have knowledge on how to manage a websites, then i would give you more tips.  
+
+Question 13
+Would you like support on the management of the website. Note, this offer includes additional charges.  
+Option A: Yes
+Option B: No
+
+Question 14 
+Congratulations you have filled up to this point. What is your budget for this project?
