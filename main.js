@@ -54,15 +54,8 @@ const bannerGallery = [
     {src:'./images/image-product-3.jpg'},
     {src:'./images/image-product-4.jpg'}
 ]
-bannerGallery.forEach((gallery) => {
-    console.log(gallery)
-});
-
-imageThumbnail.forEach((thumbnail) => {
-    
-    thumbnail.addEventListener('click', (event)=>{
-        event.preventDefault();
-
+for(let i = 0; i < imageThumbnail.length; i++){
+    imageThumbnail[i].addEventListener('click', (event)=>{
         banner.innerHTML = `<img data-imageThumbnail="imageThumbnail" src="${bannerGallery[i].src}" alt="image product" class="width borderRadius">`;
-    })  
-})
+    })
+}

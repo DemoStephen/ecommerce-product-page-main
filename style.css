@@ -81,6 +81,9 @@ section, header{
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem
 }
+.thumbnail img{
+    cursor: pointer;
+}
 header .companyName{
     text-transform: uppercase;
 }
