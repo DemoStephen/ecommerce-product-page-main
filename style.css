@@ -36,6 +36,22 @@ nav{
 .avatar{
     width: 50px;
 }
+.cart, .avatar{
+    cursor: pointer;
+}
+nav .strong span{
+    position: relative;
+}
+.number{
+    position: absolute;
+    right: -0.625rem;
+    top: -0.5rem;
+    color: var(--White);
+    font-size: 0.675rem;
+    background-color: var(--Orange);
+    padding: .04rem .55rem;
+    border-radius: .5rem;
+}
 .mobileSidebar{
     position: fixed;
     top: 0;
@@ -63,6 +79,47 @@ nav{
 }
 .mobileSidebar ul li{
     padding: .5rem 0;
+}
+
+.basket{
+    background-color: var(--White);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1), 0px 8px 30px rgba(0, 0, 0, 0.1);
+    border-radius: .75rem;
+    position: absolute;
+    margin-top: 1rem;
+    right: 5%;
+    width: 20rem;
+}
+.basket h4{
+    padding: 1rem;
+}
+.basket .filledOrEmpty{
+    padding: 1rem;
+}
+.basket .filledOrEmpty{
+    min-height: 7rem;
+    flex-direction: column;
+    justify-content: center;
+}
+.basket .filledOrEmpty .empty{
+    text-align: center;
+    text-align: center;
+}
+.basket .filledOrEmpty div{
+    margin: 0 0 1rem 0;
+}
+.basket .filledOrEmpty div .filled{
+    gap: 1.25rem
+}
+.basket .filledOrEmpty div .cartImage{
+    width: 3.725rem;
+    border-radius: .625rem;
+}
+.basket .filledOrEmpty div .checkout{
+    padding: .75rem;
+    width: 100%;
+    background-color: var(--Orange);
+    border-radius: .425rem;
 }
 main{
     justify-content: space-between;
@@ -173,6 +230,9 @@ button{
     }
     .desktopCta{
         display: none;
+    }
+    .basket{
+        width: 90%;
     }
     .menu{
         display: block;
