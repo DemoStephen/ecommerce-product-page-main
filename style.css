@@ -64,6 +64,7 @@ nav .strong span{
     animation: sideBar .1s linear;
     -moz-animation: sideBar .1s linear;
     -webkit-animation: sideBar .1s linear;
+    z-index: 1000;
 }
 
 @keyframes sideBar{
