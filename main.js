@@ -7,11 +7,13 @@ const incrementBtn = document.querySelector('[data-incrementBtn]');
 let actualValue = +quantity.innerText;
 price = document.querySelector('[data-price]');
 discount = document.querySelector('[data-discount]');
+
 // This block of code contain an event listener that shows the sideBar on a mobile screen
 openSideBar.addEventListener('click', (event)=>{
     event.preventDefault();
     sideBar.classList.remove('d-none')
 })
+
 // This block of code contain an event listener that hides the sideBar on a mobile screen
 closeSideBar.addEventListener('click', (event)=>{
     event.preventDefault();
@@ -20,6 +22,7 @@ closeSideBar.addEventListener('click', (event)=>{
     }
     sideBar.classList.add('d-none')
 })
+
 // This block of code contain an event listener that decreases the amount of product users want
 decrementBtn.addEventListener('click', (event)=>{
     event.preventDefault();
@@ -30,6 +33,7 @@ decrementBtn.addEventListener('click', (event)=>{
     }priceCalculator()
     return quantity.innerText = actualValue
 })
+
 // This block of code contain an event listener that increases the amount of product users want
 incrementBtn.addEventListener('click', (event)=>{
     event.preventDefault();
@@ -48,7 +52,8 @@ const priceCalculator = ()=>{
         discount.innerText = `$${actualValue * 250}.00`
     }
 }
-// This is my photo gallery section. I need help here. Its take time for my image to load.
+
+// This is my photo gallery section. 
 const imageThumbnail = document.querySelectorAll('[data-imageThumbnail]');
 const banner = document.querySelector('[data-banner]');
 const bannerGallery = [
@@ -57,8 +62,20 @@ const bannerGallery = [
     {src:'./images/image-product-3.jpg'},
     {src:'./images/image-product-4.jpg'}
 ]
-for(let i = 0; i < imageThumbnail.length; i++){
-    imageThumbnail[i].addEventListener('click', (event)=>{
-        banner.innerHTML = `<img data-imageThumbnail="imageThumbnail" src="${bannerGallery[i].src}" alt="image product" class="width borderRadius">`;
+
+// This function makes my image ready before the user request for it
+const preloadImages = (images) => {
+    images.forEach(image => {
+        const img = new Image();
+        img.src = image.src;
+    });
+};
+preloadImages(bannerGallery);
+imageThumbnail.forEach((thumbnail, index)=>{
+    thumbnail.addEventListener('click', (event)=>{
+        let image = index + 1;
+        banner.src = `${bannerGallery[index].src}`;
+        banner.alt = `image product ${image}`;
     })
-}
+})
+
