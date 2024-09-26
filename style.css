@@ -215,6 +215,9 @@ header .priceTag p span {
 ul {
   list-style: none;
 }
+li {
+  cursor: pointer;
+}
 button {
   outline: none;
   cursor: pointer;
