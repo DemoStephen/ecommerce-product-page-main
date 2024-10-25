@@ -1,7 +1,25 @@
+import { useState } from "react";
 import Form from "./Form";
 import SideBar from "./SideBar";
 
 export default function Navigation() {
+  const [navBar, setNavBar] = useState(false);
+  let navBarClass =
+    "fixed top-0 right-0 px-[5%] bg-slate-300 block md:hidden transition-transform z-[1000000] w-[90%] h-full ";
+  if (!navBar) {
+    navBarClass += " translate-x-[100%]";
+  }
+  function handleSideBar() {
+    if (!navBar) {
+      navBarClass += " translate-x-[0%]";
+      setNavBar(true);
+      return;
+    } else {
+      navBarClass += "  translate-x-[100%]";
+      setNavBar(false);
+      return;
+    }
+  }
   return (
     <div className="relative">
       {/* TODO:
@@ -29,7 +47,7 @@ export default function Navigation() {
             <Form />
           </div>
           <div className="flex items-center gap-5">
-            <div className="border-r border-slate-900 relative group md:block hidden">
+            <div className="border-r border-slate-900 relative group md:block hidden z-50">
               <h3 className="cursor-pointer p-4 flex items-center gap-2">
                 <span>My Account</span>
                 <span>
@@ -65,8 +83,7 @@ export default function Navigation() {
                 </li>
               </ul>
             </div>
-
-            <span className="cursor-pointer">
+            <span className="cursor-pointer md:hidden">
               <svg
                 width="32px"
                 height="32px"
@@ -95,7 +112,6 @@ export default function Navigation() {
                 </defs>
               </svg>
             </span>
-
             <span className="cursor-pointer">
               <svg
                 width="32px"
@@ -124,7 +140,7 @@ export default function Navigation() {
                 />
               </svg>
             </span>
-            <span className="cursor-pointer md:hidden">
+            <span className="cursor-pointer md:hidden" onClick={handleSideBar}>
               <svg
                 width="32px"
                 height="32px"
@@ -158,8 +174,8 @@ export default function Navigation() {
           </p>
         </div>
       </nav>
-      <section className="fixed top-0 right-0 px-[5%] bg-slate-300 w-[97.5%] h-screen block md:hidden">
-        <SideBar />
+      <section className={navBarClass}>
+        <SideBar closeNavBar={handleSideBar} />
       </section>
     </div>
   );
